@@ -1,4 +1,10 @@
+* {
+  font-family: 'Roboto', sans-serif;
+}
 
+body {
+  background-color: rgb(25, 25, 25);
+}
 
 .user-container {
   border: 1px solid red;
@@ -43,4 +49,14 @@
 .sev-container {
   border: 1px solid olive;
   margin: 10px;
+}
+
+/* ==================== comment ========================== */
+
+.title {
+  color: black;
+}
+
+.segment {
+  background-color: green;
 }

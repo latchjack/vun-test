@@ -1,5 +1,7 @@
 import React from 'react'
 import scandata from './scan.json'
+import Collapsible from 'react-collapsible'
+
 
 class Scan extends React.Component {
   render() {
@@ -9,35 +11,39 @@ class Scan extends React.Component {
         <section className="section">
 
           {/* USER SECTION */}
-          <div className="user-container">
+          <div className="user-container card">
             <div className="login-container">
-              <h1><span className="user-details">User:</span> {scandata.user.displayName}</h1>
-              <h1><span className="user-details">Email:</span> {scandata.user.email}</h1>
+              <h1><span className="title is-6">User:</span> {scandata.user.displayName}</h1>
+              <h1><span className="title is-6">Email:</span> {scandata.user.email}</h1>
             </div>
 
-            {scandata.user.notifications.map((notification, i) => {
-              return (
-                <div className="notification-container" key={i}>
-                  <p>Notification ID: {notification.id}</p>
-                  <p>Date: {notification.date}</p>
-                  <p>Message: {notification.message}</p>
-                </div>
-              )
-            })}
+            <div className="notifications">
+              {scandata.user.notifications.map((notification, i) => {
+                return (
+                  <div className="notification-container" key={i}>
+                    <p><span className="title is-6">Notification ID:</span> {notification.id}</p>
+                    <p><span className="title is-6">Date:</span> {notification.date}</p>
+                    <p><span className="title is-6">Message:</span> {notification.message}</p>
+                  </div>
+                )
+              })}
+            </div>
           </div>
 
           {/* SCAN SECTION */}
-          <div className="scan-container">
+          <div className="scan-container card">
             <div className="details-container">
-              <p>{scandata.scan.name}</p>
-              <p>{scandata.scan.status}</p>
-
-              <p>Scan Started: {scandata.scan.dateStarted}</p>
-              <p>Scan Completed: {scandata.scan.datCompleted}</p>
+              <p className="title is-3 has-text-centered">{scandata.scan.name}</p>
+              
+              <div className="has-text-centered">
+                <p>{scandata.scan.status}</p>
+                <p><span className="title is-6">Scan Started:</span> {scandata.scan.dateStarted}</p>
+                <p><span className="title is-6">Scan Completed:</span> {scandata.scan.datCompleted}</p>
+              </div>
             </div>
 
             <div className="scanner-container">
-              <p>Scanner Names:</p>
+              <p><span className="title is-6">Scanner Names:</span></p>
               {scandata.scan.scanners.map((scanner, i) => {
                   return (
                     <div key={i}>
@@ -47,36 +53,42 @@ class Scan extends React.Component {
               })}
             </div>
 
+            <div className="segment">
             {scandata.scan.assets.map((asset, i) => {
                 return (
                   <div className="asset-container" key={i}>
-                    <p>ID: {asset.id}</p>
-                    <p>Name: {asset.name}</p>
-                    <p>Description: {asset.description}</p>
+                    <p><span className="title is-6">ID:</span> {asset.id}</p>
+                    <p><span className="title is-6">Name:</span> {asset.name}</p>
+                    <p><span className="title is-6">Description:</span> {asset.description}</p>
                   </div>
                 )
             })}
+            </div>
 
+            <div className="segment">
             {scandata.scan.vulnerabilities.map((vun, i) => {
               return (
-                <div className="vun-container" key={i}>
-                  <p>Vun ID: {vun.id}</p>
-                  <p>Name: {vun.name}</p>
-                  <p>Severity: {vun.severity}</p>
-                  <p>Score: {vun.cvssBaseScore}</p>
-                  <p>Score: {vun.references}</p>
-                  <p>Score: {vun.solution}</p>
-                  <p>Score: {vun.description}</p>
-                  <p>Affected Assets: {parseInt(scandata.scan.vulnerabilities.affectedAssets)}</p>
+                <div className="vun-container segment" key={i}>
+                  <p><span className="title is-6">ID:</span> {vun.id}</p>
+                  <p><span className="title is-6">Name:</span> {vun.name}</p>
+                  <p><span className="title is-6">Severity:</span> {vun.severity}</p>
+                  <p><span className="title is-6">Score:</span> {vun.cvssBaseScore}</p>
+                  <p><span className="title is-6">References:</span> {vun.references}</p>
+                  <p><span className="title is-6">Solution:</span> {vun.solution}</p>
+                  <p><span className="title is-6">Description:</span> {vun.description}</p>
+                  <p><span className="title is-6">Affected Assets:</span> {parseInt(scandata.scan.vulnerabilities.affectedAssets)}</p>
                 </div>
               )
             })}
+            </div>
 
-            <div className="sev-container">
-              <p>Critical: {scandata.scan.severityCounts.critical}</p>
-              <p>High: {scandata.scan.severityCounts.high}</p>
-              <p>Medium: {scandata.scan.severityCounts.medium}</p>
-              <p>Low: {scandata.scan.severityCounts.low}</p>
+
+            <div className="sev-container segment">
+              <p className="title is-3 has-text-centered">Severity</p>
+              <p><span className="title is-6">Critical:</span> {scandata.scan.severityCounts.critical}</p>
+              <p><span className="title is-6">High:</span> {scandata.scan.severityCounts.high}</p>
+              <p><span className="title is-6">Medium:</span> {scandata.scan.severityCounts.medium}</p>
+              <p><span className="title is-6">Low:</span> {scandata.scan.severityCounts.low}</p>
             </div>
 
 
