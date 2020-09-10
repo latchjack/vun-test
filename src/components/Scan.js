@@ -26,11 +26,24 @@ class Scan extends React.Component {
 
           {/* SCAN SECTION */}
           <div className="scan-container">
-            <p>{scandata.scan.name}</p>
-            <p>{scandata.scan.status}</p>
+            <div className="details-container">
+              <p>{scandata.scan.name}</p>
+              <p>{scandata.scan.status}</p>
 
-            <p>Scan Started: {scandata.scan.dateStarted}</p>
-            <p>Scan Completed: {scandata.scan.datCompleted}</p>
+              <p>Scan Started: {scandata.scan.dateStarted}</p>
+              <p>Scan Completed: {scandata.scan.datCompleted}</p>
+            </div>
+
+            <div className="scanner-container">
+              <p>Scanner Names:</p>
+              {scandata.scan.scanners.map((scanner, i) => {
+                  return (
+                    <div key={i}>
+                      <p>{scanner}</p>
+                    </div>
+                  )
+              })}
+            </div>
 
             {scandata.scan.assets.map((asset, i) => {
                 return (
@@ -42,13 +55,6 @@ class Scan extends React.Component {
                 )
             })}
 
-            {scandata.scan.scanners.map((scanner, i) => {
-                return (
-                  <div className="scanner-container" key={i}>
-                    <p>Scanner Name: {scanner}</p>
-                  </div>
-                )
-            })}
 
 
 
