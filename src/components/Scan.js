@@ -6,13 +6,13 @@ class Scan extends React.Component {
     return(
       <>
       {console.log(scandata)}
-        <div className="main-container">
+        <section className="section">
 
           {/* USER SECTION */}
           <div className="user-container">
             <div className="login-container">
-              <h1>User: {scandata.user.displayName}</h1>
-              <h1>Email: {scandata.user.email}</h1>
+              <h1><span className="user-details">User:</span> {scandata.user.displayName}</h1>
+              <h1><span className="user-details">Email:</span> {scandata.user.email}</h1>
             </div>
 
             {scandata.user.notifications.map((notification, i) => {
@@ -51,8 +51,8 @@ class Scan extends React.Component {
                 return (
                   <div className="asset-container" key={i}>
                     <p>ID: {asset.id}</p>
-                    <p>name: {asset.date}</p>
-                    <p>Description: {asset.message}</p>
+                    <p>Name: {asset.name}</p>
+                    <p>Description: {asset.description}</p>
                   </div>
                 )
             })}
@@ -85,7 +85,7 @@ class Scan extends React.Component {
 
           </div>
 
-        </div>
+        </section>
       </>
     )
   }

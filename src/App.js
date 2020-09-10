@@ -1,4 +1,5 @@
 import React from 'react';
+import 'bulma'
 import './App.css';
 
 import Scan from './components/Scan'
