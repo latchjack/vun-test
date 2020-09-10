@@ -5,6 +5,11 @@
   margin: 20px;
 }
 
+.login-container {
+  border: 1px solid red;
+  margin: 10px;
+}
+
 .notification-container {
   border: 1px solid steelblue;
   margin: 10px;
@@ -27,5 +32,15 @@
 
 .scanner-container {
   border: 1px solid purple;
+  margin: 10px;
+}
+
+.vun-container {
+  border: 1px solid indianred;
+  margin: 10px;
+}
+
+.sev-container {
+  border: 1px solid olive;
   margin: 10px;
 }

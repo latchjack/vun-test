@@ -10,8 +10,10 @@ class Scan extends React.Component {
 
           {/* USER SECTION */}
           <div className="user-container">
-            <h1>User: {scandata.user.displayName}</h1>
-            <h1>Email: {scandata.user.email}</h1>
+            <div className="login-container">
+              <h1>User: {scandata.user.displayName}</h1>
+              <h1>Email: {scandata.user.email}</h1>
+            </div>
 
             {scandata.user.notifications.map((notification, i) => {
               return (
@@ -54,6 +56,29 @@ class Scan extends React.Component {
                   </div>
                 )
             })}
+
+            {scandata.scan.vulnerabilities.map((vun, i) => {
+              return (
+                <div className="vun-container" key={i}>
+                  <p>Vun ID: {vun.id}</p>
+                  <p>Name: {vun.name}</p>
+                  <p>Severity: {vun.severity}</p>
+                  <p>Score: {vun.cvssBaseScore}</p>
+                  <p>Score: {vun.references}</p>
+                  <p>Score: {vun.solution}</p>
+                  <p>Score: {vun.description}</p>
+                  <p>Affected Assets: {parseInt(scandata.scan.vulnerabilities.affectedAssets)}</p>
+                </div>
+              )
+            })}
+
+            <div className="sev-container">
+              <p>Critical: {scandata.scan.severityCounts.critical}</p>
+              <p>High: {scandata.scan.severityCounts.high}</p>
+              <p>Medium: {scandata.scan.severityCounts.medium}</p>
+              <p>Low: {scandata.scan.severityCounts.low}</p>
+            </div>
+
 
 
 
