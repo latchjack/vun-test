@@ -3,53 +3,53 @@
 }
 
 body {
-  background-color: rgb(25, 25, 25);
+  background-color: #c41230;
 }
 
-.user-container {
-  border: 1px solid red;
-  margin: 20px;
+.navbar {
+  background-color: black;
+}
+
+.navbar-item {
+  color: white;
+  font-weight: bolder;
+}
+
+#root > nav > div > div.navbar-end > a:nth-child(1) {
+  padding-top: 32px;
+}
+
+.hero-body {
+  background-color: #c41230;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.card {
+  padding: 5px;
+}
+
+.containers {
+  margin: 10px;
 }
 
 .login-container {
-  border: 1px solid red;
+  padding: 10px;
   margin: 10px;
 }
 
 .notification-container {
-  border: 1px solid steelblue;
+  border: 2px solid black;
   margin: 10px;
+  padding: 10px;
 }
 
 .scan-container {
-  border: 1px solid blue;
+  border: 2px solid black;
   margin: 20px;
 }
 
-.details-container {
-  border: 1px solid goldenrod;
-  margin: 10px;
-}
-
-.asset-container {
-  border: 1px solid green;
-  margin: 10px;
-}
-
-.scanner-container {
-  border: 1px solid purple;
-  margin: 10px;
-}
-
-.vun-container {
-  border: 1px solid indianred;
-  margin: 10px;
-}
-
-.sev-container {
-  border: 1px solid olive;
-  margin: 10px;
-}
 
 /* ==================== comment ========================== */
 
@@ -57,6 +57,3 @@ body {
   color: black;
 }
 
-.segment {
-  background-color: green;
-}
