@@ -13,6 +13,14 @@ body {
   margin-top: 30px;
 }
 
+.ref-link {
+  color: #c41230;
+}
+
+.ref-link :hover {
+  color: black;
+}
+
 hr {
   margin: 10px;
 }

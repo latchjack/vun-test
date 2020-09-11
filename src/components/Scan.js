@@ -9,7 +9,7 @@ class Scan extends React.Component {
       <>
       {console.log(scandata)}
         <section className="section">
-          <div className="column">
+          <div className="columns">
           {/* SCAN SECTION */}
           <div className="scan-container card">
             <div className="containers top-info">
@@ -61,9 +61,14 @@ class Scan extends React.Component {
                   <hr />
                   <p><span className="title is-6">Description:</span> {vuln.description}</p>
                   <hr />
-                  <p><span className="title is-6">References:</span> {vuln.references}</p>
+                  <p><span className="title is-6">References:</span> <a href={vuln.references} target="_blank" className="ref-link">Click here</a></p>
                   <hr />
-                  <p><span className="title is-6">Solution:</span> {vuln.solution}</p>
+                  <div className="columns">
+                    <div className="column is-mobile">
+                      <p><span className="title is-6">Solution:</span></p>
+                      <p>{vuln.solution}</p>
+                    </div>
+                  </div>
                   <hr />
                   <p><span className="title is-6">Score:</span> {vuln.cvssBaseScore}</p>
                 </div>
