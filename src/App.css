@@ -1,7 +1,7 @@
 /* global styles */
 * {
   font-family: 'Roboto', sans-serif;
-
+  border-radius: 3px;
 }
 
 body {
@@ -10,17 +10,17 @@ body {
 
 .title {
   color: black;
+  margin-top: 30px;
 }
 
+hr {
+  margin: 10px;
+}
 
 /* end of global styles */
 
 
 /* navbar */
-#root > main > nav > div > div.navbar-menu.is-active > div > a{
-  color:(rgb(0, 153, 255));
-}
-
 .navbar {
   background-color: black;
 }
@@ -46,6 +46,10 @@ body {
 /* end of hero */
 
 /* scan page styles */
+#heading {
+  margin: 0 0 10px 0;
+}
+
 .scan-container {
   border: 2px solid black;
   margin: 20px;
@@ -56,21 +60,22 @@ body {
   margin: 10px;
 }
 
+.scanner-names {
+  display: flex;
+}
+
 .individual-scanner {
   border: 1px solid black;
-  padding: 1px 0 1px 0;
+  padding: 5px;
 }
 
 .card {
   padding: 5px;
-  /* background-color: #c41230; */
 }
 
 .containers {
   margin: 10px;
 }
-
-
 
 .individual-vuln {
   border: 1px solid black;
