@@ -1,6 +1,7 @@
 import React from 'react'
 import scandata from './scan.json'
 
+import circlelogo from '../assets/ncclogo.jpeg'
 
 class Scan extends React.Component {
   render() {
@@ -8,19 +9,22 @@ class Scan extends React.Component {
       <>
       {console.log(scandata)}
         <section className="section">
-
+          <div className="column">
           {/* SCAN SECTION */}
           <div className="scan-container card">
             <div className="containers">
+            <img src={circlelogo} alt="logo" width="100px" />
               <p className="title is-3 has-text-centered">{scandata.scan.name}</p>
               
               <div className="has-text-centered">
-                <p>{scandata.scan.status}</p>
+                <p>{scandata.scan.status} ✅</p>
                 <p><span className="title is-6">Scan Started:</span> {scandata.scan.dateStarted}</p>
                 <p><span className="title is-6">Scan Completed:</span> {scandata.scan.datCompleted}</p>
               </div>
             </div>
 
+          <div className="scanners">
+            <p className="title is-3 has-text-centered">Scanners</p>
             <div className="containers">
               <p><span className="title is-6">Scanner Names:</span></p>
               {scandata.scan.scanners.map((scanner, i) => {
@@ -32,30 +36,32 @@ class Scan extends React.Component {
               })}
             </div>
 
-            <div className="segment">
+            <div className="">
             {scandata.scan.assets.map((asset, i) => {
                 return (
-                  <div className="containers" key={i}>
-                    <p><span className="title is-6">ID:</span> {asset.id}</p>
+                  <div className="containers individual-scanner" key={i}>
                     <p><span className="title is-6">Name:</span> {asset.name}</p>
                     <p><span className="title is-6">Description:</span> {asset.description}</p>
+                    <p><span className="title is-6">ID:</span> {asset.id}</p>
                   </div>
                 )
             })}
             </div>
+          </div>
 
-            <div className="segment">
-            {scandata.scan.vulnerabilities.map((vun, i) => {
+            <div className="column">
+            <p className="title is-3 has-text-centered">Vulnerabilities</p>
+            {scandata.scan.vulnerabilities.map((vuln, i) => {
               return (
-                <div className="containers" key={i}>
-                  <p><span className="title is-6">ID:</span> {vun.id}</p>
-                  <p><span className="title is-6">Name:</span> {vun.name}</p>
-                  <p><span className="title is-6">Severity:</span> {vun.severity}</p>
-                  <p><span className="title is-6">Score:</span> {vun.cvssBaseScore}</p>
-                  <p><span className="title is-6">References:</span> {vun.references}</p>
-                  <p><span className="title is-6">Solution:</span> {vun.solution}</p>
-                  <p><span className="title is-6">Description:</span> {vun.description}</p>
+                <div className="containers individual-vuln is-mobile" key={i}>
+                  <p><span className="title is-6">Name:</span> {vuln.name}</p>
+                  <p><span className="title is-6">ID:</span> {vuln.id}</p>
+                  <p><span className="title is-6">Severity:</span> {vuln.severity}</p>
                   <p><span className="title is-6">Affected Assets:</span> {parseInt(scandata.scan.vulnerabilities.affectedAssets)}</p>
+                  <p><span className="title is-6">Description:</span> {vuln.description}</p>
+                  <p><span className="title is-6">References:</span> {vuln.references}</p>
+                  <p><span className="title is-6">Solution:</span> {vuln.solution}</p>
+                  <p><span className="title is-6">Score:</span> {vuln.cvssBaseScore}</p>
                 </div>
               )
             })}
@@ -64,10 +70,10 @@ class Scan extends React.Component {
 
             <div className="containers">
               <p className="title is-3 has-text-centered">Severity</p>
-              <p><span className="title is-6">Critical:</span> {scandata.scan.severityCounts.critical}</p>
-              <p><span className="title is-6">High:</span> {scandata.scan.severityCounts.high}</p>
-              <p><span className="title is-6">Medium:</span> {scandata.scan.severityCounts.medium}</p>
-              <p><span className="title is-6">Low:</span> {scandata.scan.severityCounts.low}</p>
+              <p><span className="title is-4">Critical:</span> <span className="subtitle is-4">{scandata.scan.severityCounts.critical}</span></p>
+              <p><span className="title is-4">High:</span> <span className="subtitle is-4">{scandata.scan.severityCounts.high}</span></p>
+              <p><span className="title is-4">Medium:</span> <span className="subtitle is-4">{scandata.scan.severityCounts.medium}</span></p>
+              <p><span className="title is-4">Low:</span> <span className="subtitle is-4">{scandata.scan.severityCounts.low}</span></p>
             </div>
 
 
@@ -76,6 +82,7 @@ class Scan extends React.Component {
 
           </div>
 
+          </div>
         </section>
       </>
     )

@@ -1,9 +1,24 @@
+/* global styles */
 * {
   font-family: 'Roboto', sans-serif;
+
 }
 
 body {
   background-color: #c41230;
+}
+
+.title {
+  color: black;
+}
+
+
+/* end of global styles */
+
+
+/* navbar */
+#root > main > nav > div > div.navbar-menu.is-active > div > a{
+  color:(rgb(0, 153, 255));
 }
 
 .navbar {
@@ -18,21 +33,54 @@ body {
 #root > nav > div > div.navbar-end > a:nth-child(1) {
   padding-top: 32px;
 }
+/* end of navbar */
 
+
+/* hero styles */
 .hero-body {
   background-color: #c41230;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
 }
+/* end of hero */
+
+/* scan page styles */
+.scan-container {
+  border: 2px solid black;
+  margin: 20px;
+}
+
+.scanners {
+  border: 1px solid black;
+  margin: 10px;
+}
+
+.individual-scanner {
+  border: 1px solid black;
+  padding: 1px 0 1px 0;
+}
 
 .card {
   padding: 5px;
+  /* background-color: #c41230; */
 }
 
 .containers {
   margin: 10px;
 }
+
+
+
+.individual-vuln {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+/* end of scan page */
+
+
+/* user page */
 
 .login-container {
   padding: 10px;
@@ -44,16 +92,4 @@ body {
   margin: 10px;
   padding: 10px;
 }
-
-.scan-container {
-  border: 2px solid black;
-  margin: 20px;
-}
-
-
-/* ==================== comment ========================== */
-
-.title {
-  color: black;
-}
-
+/* end of user */

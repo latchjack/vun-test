@@ -1,8 +1,6 @@
 import React from 'react'
 import scandata from './scan.json'
 
-
-
 const Home = () => (
 
   <section className="hero is-fullheight-with-navbar is-primary">
@@ -10,9 +8,10 @@ const Home = () => (
       <div className="container">
 
       <section className="section">
+        
       <div className="login-container">
-              <h1><span className="title is-6">User:</span> {scandata.user.displayName}</h1>
-              <h1><span className="title is-6">Email:</span> {scandata.user.email}</h1>
+              <h1><span className="title is-3">User:</span> <span className="subtitle is-3">{scandata.user.displayName}</span></h1>
+              <h1><span className="title is-3">Email:</span> <span className="subtitle is-3">{scandata.user.email}</span></h1>
             </div>
 
             {/* This maps over the notifications array to return the div below below for each one */}
