@@ -41,6 +41,11 @@ hr {
 #root > nav > div > div.navbar-end > a:nth-child(1) {
   padding-top: 32px;
 }
+
+#root > nav > div > div.navbar-end > a:hover {
+  background-color: black;
+}
+
 /* end of navbar */
 
 
