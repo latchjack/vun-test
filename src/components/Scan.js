@@ -61,7 +61,7 @@ class Scan extends React.Component {
                   <hr />
                   <p><span className="title is-6">Description:</span> {vuln.description}</p>
                   <hr />
-                  <p><span className="title is-6">References:</span> <a href={vuln.references} target="_blank" className="ref-link">Click here</a></p>
+                  <p><span className="title is-6">References:</span> <a href={vuln.references} target="_blank" rel="noopener noreferrer" className="ref-link">Click here</a></p>
                   <hr />
                   <div className="columns">
                     <div className="column is-mobile">
