@@ -4,8 +4,10 @@
 
 + HTML
 + CSS
++ Bulma
 + JavaScript
     + React
+    + React Router
 
 ## Challenges
 
